@@ -19,16 +19,19 @@ private:
 public:
     //Student(string sname, double sgpa, Professor* prof = {});
     Student(string sname, double sgpa, Professor* prof = NULL);
-    string     getName();
+    string     getName() { return sname; }
     double     getGpa();
-    Professor* getAdvisor();
+    Professor* getAdvisor() { return advisor; }
     void       setName(string name);
     void       setGpa(double gpa);
     void       setAdvisor(Professor* prof);
     string     toString();
     
-    
+    friend ostream& operator<<(ostream& out, Student& s) {
+        out << s.toString();
+        return out;}
 };
+
 #include "Student.h"
 #include "Professor.h"
 
@@ -38,18 +41,18 @@ Student::Student(string sname, double sgpa, Professor* prof)
    setGpa(sgpa);
    setAdvisor(prof);
 }
-string Student::getName()
-{
-    return sname;
-}
+//string Student::getName()
+//{
+//    return sname;
+//}
 double Student::getGpa()
 {
     return sgpa;
 }
-Professor* Student::getAdvisor()
-{
-    return advisor;
-}
+//Professor* Student::getAdvisor()
+//{
+//    return advisor;
+//}
 void Student::setName(string name)
 {
     sname = name;

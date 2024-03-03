@@ -130,6 +130,7 @@
     <ClCompile Include="Circular-Professor-Student.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Couple.h" />
     <ClInclude Include="Professor.h" />
     <ClInclude Include="Student.h" />
   </ItemGroup>

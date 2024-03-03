@@ -18,7 +18,7 @@ private:
 
 public:
     Professor(string name, string dept);
-    string getName();
+    string getName() { return pname; }
     string getDept();
     void   setName(string name);
     void   setDept(string dept);
@@ -26,6 +26,11 @@ public:
     void   addAdvisee(Student s);
     void   printAdvisees();
 
+    friend ostream&operator<<(ostream &out, Professor &p) 
+    {
+        out << p.toString();
+        return out;
+    }
 
 };
 //-------------------------------------------------------------------
@@ -43,10 +48,10 @@ void Professor::setDept(string dept)
 {
     pdept = dept;
 }
-string Professor::getName()
-{
-    return pname;
-}
+//string Professor::getName()
+//{
+//    return pname;
+//}
 string Professor::getDept()
 {
     return pdept;
